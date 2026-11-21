@@ -1,0 +1,111 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://opencyclerail.org/schema/bike-policy-sources.schema.json",
+ "title": "Bike carriage rule with its source",
+ "type": "object",
+ "required": [
+  "operator",
+  "policy",
+  "confirmed_on"
+ ],
+ "properties": {
+  "operator": {
+   "type": "string",
+   "description": "The operator, or the operator and train family where it has several rules"
+  },
+  "country": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "pattern": "^[A-Z]{2}$",
+   "description": "ISO 3166-1 alpha-2; EU for a cross-border operator"
+  },
+  "trains": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The train families or feed codes the row covers"
+  },
+  "policy": {
+   "enum": [
+    "assembled",
+    "reservation",
+    "disassembled",
+    "none",
+    "mixed"
+   ],
+   "description": "assembled: a built bike boards with no booking. reservation: a built bike with a booked, sometimes paid, space. disassembled: bagged or folded only. none: no bike at all. mixed: depends on the train or route, see conditions"
+  },
+  "conditions": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Fees, hours, counts, seasons, in a line"
+  },
+  "cost": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "rule_patterns": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "Regular expressions over '<line> <agency>' as the feeds name the train; the resolver's rules this row backs"
+  },
+  "url": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "format": "uri",
+   "description": "The operator's own page stating the rule"
+  },
+  "lang": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Language of that page"
+  },
+  "excerpt": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Verbatim from the page when the rule was confirmed"
+  },
+  "agrees": {
+   "enum": [
+    "yes",
+    "partly",
+    "no",
+    null
+   ],
+   "description": "Whether the page matched the rule on the day it was read"
+  },
+  "note": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "confirmed_on": {
+   "type": "string",
+   "format": "date"
+  },
+  "source_checked": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "format": "date",
+   "description": "The day the page was last read"
+  }
+ }
+}

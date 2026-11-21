@@ -1,0 +1,19 @@
+{
+  "name": "@opencyclerail/rules",
+  "version": "0.1.0",
+  "description": "Bicycle carriage rules for European trains: which train takes a built bike, which wants it bagged, which refuses it.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "country-coder": "^2.1.0"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vitest": "^3.2.4"
+  },
+  "license": "SEE LICENSE IN ../LICENSE.intended"
+}

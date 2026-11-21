@@ -14,14 +14,20 @@ This repository is the open home of the project.
 - `data/` - the **bike carriage rules dataset**: one row per operator or train
   family, the policy (built and free, built with a booked space, bagged only,
   none), the conditions in a line, the operator's own page that states them, a
-  verbatim excerpt and the date it was read. 37 rows across 19 countries as of
-  21 November 2026. Open data under ODbL, see `data/LICENSE`. The same rows
-  are served live at https://opencyclerail.tech/api/journey?operators=1 and
-  the matching patterns at https://opencyclerail.tech/api/journey?policies=1.
-- The planner's code (journey composer, corridor assembler, rail leg cache,
-  policy resolver) runs at opencyclerail.tech and inside TourTrax and is being
-  prepared for an open release; the licence will be announced with it. Until
-  then this repository holds the dataset, which is open now.
+  verbatim excerpt and the date it was read. 37 rows across 34 operators in 19
+  countries as of 21 November 2026. Open data under ODbL, see `data/LICENSE`.
+  The same rows are served live at
+  https://opencyclerail.tech/api/journey?operators=1; `schema/` describes a row.
+- `rules/` - the **resolver** as a small TypeScript package with tests: give it
+  a train as a feed names it and it answers `assembled`, `reservation`,
+  `disassembled`, `none` or `unknown`. The same code runs inside TourTrax and
+  opencyclerail.tech.
+- `watch/` - the **page watch** that keeps the rules honest: the sentences of
+  each operator's page that mention a bicycle, fingerprinted weekly.
+- `scripts/export-dataset.mjs` refreshes `data/` from the live catalogue.
+- The journey composer (corridors, crossings, the rail leg cache) runs at
+  opencyclerail.tech and inside TourTrax and is being prepared for an open
+  release; the licence will be announced with it.
 
 ## How the rules are kept honest
 
