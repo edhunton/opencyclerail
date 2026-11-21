@@ -1,5 +1,7 @@
 # Open Cycle Rail
 
+The dataset in `data/` is open under ODbL. The code is not yet released; `LICENSE.intended` is the text under consideration for when it is.
+
 Train journeys across Europe that take your bike. The planner at
 https://opencyclerail.tech finds the fastest chain of trains from A to B that
 honours the bike, built or bagged, and says plainly which train takes it,
@@ -17,9 +19,9 @@ This repository is the open home of the project.
   are served live at https://opencyclerail.tech/api/journey?operators=1 and
   the matching patterns at https://opencyclerail.tech/api/journey?policies=1.
 - The planner's code (journey composer, corridor assembler, rail leg cache,
-  policy resolver) is free software under the AGPL-3.0, see `LICENSE`. It is
-  being extracted from the TourTrax monorepo into this repository; until then
-  it runs from there and this repository holds the dataset and the site.
+  policy resolver) runs at opencyclerail.tech and inside TourTrax and is being
+  prepared for an open release; the licence will be announced with it. Until
+  then this repository holds the dataset, which is open now.
 
 ## How the rules are kept honest
 
@@ -41,5 +43,4 @@ only, three per train, not in July) live in thirty-odd operators' PDFs. This
 dataset is the conditional model that field lacks, and the planner is the
 proof it can be used.
 
-Built by the makers of [TourTrax](https://tourtrax.guide). A project of
-emhmedia. Contact: hello@opencyclerail.org
+Built by the makers of [TourTrax](https://tourtrax.guide). A project of emhmedia, all rights reserved in the code. Contact: hello@opencyclerail.org
